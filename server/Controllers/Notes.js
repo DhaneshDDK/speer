@@ -186,9 +186,18 @@ exports.searchNotes = async (req,res)=>{
     try {
         const {q} = req.query;
         const allNotes = await notes.find({
-            tags : {
-                $in : [q]
-            }
+            $or : [
+                {
+                    tags : {
+                        $in : [q]
+                    }
+                },
+                {
+                    content : {
+                        $regex: new RegExp(q, 'i') 
+                    }
+                }
+            ]
         })
 
         res.status(200).json({
