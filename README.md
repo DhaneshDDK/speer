@@ -7,11 +7,14 @@
 ## rate-limiting is also implemented
 
 ## To clone
-
 * git cline url
 * install npm packages npm i
 * provide mongodbUrl and secret_key in .env file
-* run the application
+* run the application using node index.js
 
+
+## To run tests
+* Provide appropriate token and id in route as mentioned in correspoding functions
+* run npm i test
 
 
